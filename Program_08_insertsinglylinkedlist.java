@@ -11,10 +11,9 @@ class Node{
 
 }
 
+
 public class Program_08_insertsinglylinkedlist{
     public static void main(String[] args) {
-        Node first = new Node();
-        first.Node(10,null);
-        System.out.println(first.info);
+       
     }
 }
