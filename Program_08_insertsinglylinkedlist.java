@@ -91,7 +91,7 @@ public class Program_08_insertsinglylinkedlist{
 
         LL.insert_at_end(20);
         LL.insert_at_end(30);
-        System.out.print("Updated List:");
+        System.out.println("Updated List:");
         LL.display();
 
     }
