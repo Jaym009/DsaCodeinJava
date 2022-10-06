@@ -10,17 +10,17 @@ public class Program_08_insertsinglylinkedlist{
     
     public int size;
     public Node head;
-
+    public Node tail;
    
     public void insert_at_beginning(int data){
         Node newNode = new Node(data);
         if(head==null){
             head = newNode;
-            
+            tail = newNode;
         }
         else{
-            head.next = newNode;
-            head = newNode;
+            tail.next = newNode;
+            tail = newNode;
         }
         size++;
     }
@@ -50,7 +50,7 @@ public class Program_08_insertsinglylinkedlist{
         Node newNode = new Node(data);
         if(head==null){
             head = newNode;
-            
+            tail = newNode;
         }
         else{
             Node current = head;
@@ -60,6 +60,21 @@ public class Program_08_insertsinglylinkedlist{
             current.next = newNode;
         }
         size++;
+    }
+
+    public void deleteNode(int key){
+        Node temp = head, prev = null;
+        if (temp != null && temp.data == key) {
+            head = temp.next; 
+            return;
+        }
+        while (temp != null && temp.data != key) {
+            prev = temp;
+            temp = temp.next;
+        }
+        if (temp == null)
+            return;
+        prev.next = temp.next;
     }
 
     public void display(){
@@ -74,7 +89,8 @@ public class Program_08_insertsinglylinkedlist{
         }
         System.out.println();
     }
-
+    
+    
 
 
     public static void main(String[] args) {
@@ -93,6 +109,8 @@ public class Program_08_insertsinglylinkedlist{
         LL.insert_at_end(30);
         System.out.println("Updated List:");
         LL.display();
-
+        
+        LL.deleteNode(15);
+        LL.display();
     }
 }
